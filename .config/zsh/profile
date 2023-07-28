@@ -34,6 +34,6 @@ export LM_LICENSE_FILE=/opt/intelFPGA/LR-128191_License.dat:$LM_LICENSE_FILE
 
 [ "$HOST" = "ee-tik-eda2" ] && {
 
-source ${HOME}/Dynamatic/init_dhls.sh
+#source ${HOME}/Dynamatic/init_dhls.sh
 
 }
