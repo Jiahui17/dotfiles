@@ -16,13 +16,13 @@
 #export GRB_LICENSE_FILE='/opt/gurobi1001/gurobi.lic'
 #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$GUROBI_HOME/lib"
 
-source /opt/Dynamatic/init_dhls.sh
-export PATH=$PATH:~/Repositories/dot2smv
-export PATH=$PATH:~/Repositories/dot2smv/scripts
-export PATH=$PATH:/opt/dhls-benchmarks/scripts
+#source /opt/Dynamatic/init_dhls.sh
+#export PATH=$PATH:~/Repositories/dot2smv
+#export PATH=$PATH:~/Repositories/dot2smv/scripts
+#export PATH=$PATH:/opt/dhls-benchmarks/scripts
 
 export PATH=$PATH:~/.local/bin
-export PATH=$PATH:/opt/abc
+#export PATH=$PATH:/opt/abc
 
 export LM_LICENSE_FILE=/opt/intelFPGA/LR-128191_License.dat:$LM_LICENSE_FILE
 
