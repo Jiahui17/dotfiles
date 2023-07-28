@@ -1,0 +1,77 @@
+#        _ _                    
+#   __ _| (_) __ _ ___ _ __ ___ 
+#  / _` | | |/ _` / __| '__/ __|
+# | (_| | | | (_| \__ \ | | (__ 
+#  \__,_|_|_|\__,_|___/_|  \___|
+#
+
+
+
+# vim
+alias vi='nvim'
+alias v='nvim'
+alias sv='sudo nvim'
+
+
+# git 
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+
+# dotfile backup
+alias config='/usr/bin/env git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
+
+# tmux
+# attaches tmux to the last session; creates a new session if none exists.
+alias t='tmux attach || tmux new-session'
+
+# attaches tmux to a session (example: ta portal)
+alias ta='tmux attach -t'
+
+# creates a new session
+alias tn='tmux new-session'
+
+# lists all ongoing sessions
+alias tl='tmux list-sessions'
+
+# detach tmux from current session
+alias td='tmux detach'
+
+alias q='exit'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# ls
+alias l='ls -1 -hN --color=auto --group-directories-first'
+alias ll='ls -alF'
+alias la='ls -A'
+alias ls='ls -1 -hN --color=auto --group-directories-first'
+
+# make file utilities more verbose
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias rm='rm -vI'
+alias grep='grep --color=auto'
+alias r='ranger --choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
+alias zip='zip -x "*/.*" -x "*/sim/HLS_VERIFY/work/*" -x "*/sim/*_SRC/*" -x "*/sim/*_OUT/*" -x "*/sim/INPUT_VECTORS/*"' # by default not zipping hidden files
+alias sh='bash'
+alias xo='xdg-open .'
+
+# remote servers
+alias eda2='ssh jiahxu@ee-tik-eda2.ethz.ch'
+alias eda4='ssh jiahxu@ee-tik-eda4.ethz.ch'
+alias lagrev1='ssh jiahxu@lagrev1.ethz.ch'
+alias lagrev2='ssh jiahxu@lagrev2.ethz.ch'
+alias lagrev3='ssh jiahxu@lagrev3.ethz.ch'
+alias lagrev4='ssh jiahxu@lagrev4.ethz.ch'
+alias shutdown='shutdown now'
+alias jg='cds_jasper-22.09.001 jg'
+
+alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+alias mutt='mkdir -p ~/Mail/Attachments; cd ~/Mail/Attachments && mutt'
+alias top='htop -M --readonly'
+alias clock='tty-clock -c -C 2 -s'
+
+alias tikvpn='sudo openconnect https://sslvpn.ethz.ch/ee-tik -u jiahxu@ee-tik.ethz.ch' 
+alias ethvpn='sudo openconnect https://sslvpn.ethz.ch -u jiahxu@staff-net.ethz.ch' 
