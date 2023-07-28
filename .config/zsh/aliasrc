@@ -23,7 +23,7 @@ alias config='/usr/bin/env git --git-dir=$HOME/.config/dotfiles --work-tree=$HOM
 
 # tmux
 # attaches tmux to the last session; creates a new session if none exists.
-alias t='tmux attach || tmux new-session'
+alias t='tmux attach &> /dev/null || tmux new-session'
 
 # attaches tmux to a session (example: ta portal)
 alias ta='tmux attach -t'
@@ -41,6 +41,10 @@ alias q='exit'
 
 alias ..='cd ..'
 alias ...='cd ../..'
+
+# python alias
+#
+alias activate='source ./.venv/bin/activate'
 
 # ls
 alias l='ls -1 -hN --color=auto --group-directories-first'

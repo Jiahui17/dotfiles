@@ -37,12 +37,12 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 # Zsh prompt
 #-----------------------------------------------------------------------------------
 
-PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
+#PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
 
-#autoload -Uz promptinit
-#
-#promptinit
-#prompt bigfade
+autoload -Uz promptinit
+
+promptinit
+prompt bigfade
 
 #-----------------------------------------------------------------------------------
 # Zsh completion
