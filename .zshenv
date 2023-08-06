@@ -1,0 +1,1 @@
+/home/jxu/.config/zsh/.zshenv
