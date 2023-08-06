@@ -1,1 +1,1 @@
-/home/jxu/.config/zsh/.zshenv
+.config/zsh/.zshenv
