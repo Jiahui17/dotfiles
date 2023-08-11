@@ -10,7 +10,7 @@ if has('nvim')
 		"Plug 'dpelle/vim-LanguageTool'
 		Plug 'lervag/vimtex'
 		Plug 'christoomey/vim-tmux-navigator'
-		"Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+		Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 	call plug#end()
 else
 endif
@@ -18,7 +18,7 @@ endif
 "let g:languagetool_jar='/opt/LanguageTool-5.2/languagetool-commandline.jar'
 
 " some catppuccin specific configurations
-" colorscheme catppuccin " catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+colorscheme catppuccin-frappe " catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 " Return to last edit position when opening files (You want this!)
 "
