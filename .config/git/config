@@ -2,4 +2,4 @@
 	email = jxu@ethz.ch
 	name = Jiahui Xu
 [core]
-	pager = view
+	pager = less
