@@ -19,8 +19,8 @@ call plug#begin()
 	Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 
-source lualine.lua
-source telescope.vim
+source ~/.config/nvim/lualine.lua
+source ~/.config/nvim/telescope.vim
 "
 " Colorscheme
 "
