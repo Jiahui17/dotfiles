@@ -37,12 +37,13 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 # Zsh prompt
 #-----------------------------------------------------------------------------------
 
-#PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
+# PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
 
-autoload -Uz promptinit
 
-promptinit
-prompt bigfade
+#autoload -Uz promptinit
+#
+#promptinit
+#prompt bigfade
 
 #-----------------------------------------------------------------------------------
 # Zsh completion
@@ -99,32 +100,20 @@ preexec() { echo -ne '\e[5 q' ;}
 # enable backspace after leaving vi normal mode
 bindkey "^?" backward-delete-char
 
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # aliases
 source $ZDOTDIR/aliasrc
 source $ZDOTDIR/profile
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# prompt setup script
+# note: you need to install powerlevel9k via apt to use this script
+source $ZDOTDIR/prompt
 
 #-----------------------------------------------------------------------------------
 # Plugins
 #-----------------------------------------------------------------------------------
 
-grep -q 'Arch Linux' /etc/os-release && {
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZDOTDIR/plugins
 
-# Load syntax highlighting (should be last).
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
-}
-
-grep -q -E '(Debian|Ubuntu)' /etc/os-release && {
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Load syntax highlighting (should be last).
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
-}
-
-grep -q 'CentOS Linux' /etc/os-release && {
-# Load syntax highlighting (should be last).
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
-}
+true
