@@ -21,6 +21,7 @@ call plug#end()
 
 source ~/.config/nvim/lualine.lua
 source ~/.config/nvim/telescope.vim
+
 "
 " Colorscheme
 "
@@ -60,14 +61,16 @@ syntax on
 "disable ex mode
 map Q <Nop>
 
+"mouse integration between tmux
+set mouse=a
+
 "colorscheme industry
 
 "show the indentation line (note: there is a space in the end)
 "set list lcs=tab:\|\ 
 
-"show the line numbers, show relative number instead of absolute linenumber
+"show the line numbers
 set number
-set relativenumber
 
 "disable the swapfiles
 set noswapfile
