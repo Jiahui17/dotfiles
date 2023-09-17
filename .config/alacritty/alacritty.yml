@@ -1,0 +1,43 @@
+# color scheme
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+
+font:
+  normal:
+    family: JetBrainsMonoNerdFont
+    style: Regular
+
+  bold:
+    family: JetBrainsMonoNerdFont
+    style: Bold
+
+  italic:
+    family: JetBrainsMonoNerdFont
+    style: Italic
+
+  bold_italic:
+    family: JetBrainsMonoNerdFont
+    style: Bold Italic
+
+  size: 13
+
+
+window:
+  dimensions:
+    columns: 200
+    lines: 200
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 1
+    y: 1
+
+  opacity:
+      1
+    
+  decorations: none
+
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
