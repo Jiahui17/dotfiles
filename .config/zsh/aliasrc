@@ -47,17 +47,18 @@ alias ...='cd ../..'
 alias activate='source ./.venv/bin/activate'
 
 # ls
-alias l='ls -1 -hN --color=auto --group-directories-first'
-alias ll='ls -alF'
-alias la='ls -A'
-alias ls='ls -1 -hN --color=auto --group-directories-first'
+alias l='ls -hN --color=auto --group-directories-first'
+alias ll='ls -alFhN --color=auto --group-directories-first'
+alias la='ls -AhN --color=auto --group-directories-first'
+alias ls='ls -hN --color=auto --group-directories-first'
 
 # make file utilities more verbose
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='rm -vI'
 alias grep='grep --color=auto'
-alias r='ranger --choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
+alias r='/usr/bin/python3 /opt/ranger/ranger.py \
+	--choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
 alias zip='zip -x "*/.*" -x "*/sim/HLS_VERIFY/work/*" -x "*/sim/*_SRC/*" -x "*/sim/*_OUT/*" -x "*/sim/INPUT_VECTORS/*"' # by default not zipping hidden files
 alias sh='bash'
 alias xo='xdg-open .'
