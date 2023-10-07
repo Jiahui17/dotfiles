@@ -6,6 +6,13 @@
 # (_)___|___/_| |_|_|  \___|
 #
 #
+# aliases
+source $ZDOTDIR/aliasrc
+source $ZDOTDIR/profile
+
+# prompt setup script
+# note: you need to install powerlevel9k via apt to use this script
+source $ZDOTDIR/prompt
 
 #-----------------------------------------------------------------------------------
 # Environments
@@ -15,8 +22,8 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export SAVEHIST=1000
 export HISTSIZE=999
 
-export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
-export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
+#export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
+#export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 export PATH=$PATH:$HOME/.local/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -52,8 +59,8 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 zstyle ':completion:*' menu select # autocompletion with an arrow-key driven interface
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache  # completion cache
 zstyle ':completion::complete:*' gain-privileges 1 # autocompletion of privileged environments in privileged commands
-zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf):source-files' '*:all-files' # vim ignore non-text files
-zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|log|pdf):source-files' '*:all-files' # neovim ignore non-text files
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|log|pdf|bbl|blg|log|out):source-files' '*:all-files' # vim ignore non-text files
+zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|log|pdf|bbl|blg|log|out):source-files' '*:all-files' # neovim ignore non-text files
 zmodload zsh/complist
 
 # Automatically cd into typed directory.
@@ -102,13 +109,6 @@ bindkey "^?" backward-delete-char
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# aliases
-source $ZDOTDIR/aliasrc
-source $ZDOTDIR/profile
-
-# prompt setup script
-# note: you need to install powerlevel9k via apt to use this script
-source $ZDOTDIR/prompt
 
 #-----------------------------------------------------------------------------------
 # Plugins

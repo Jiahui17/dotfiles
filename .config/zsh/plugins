@@ -1,0 +1,19 @@
+
+grep -q 'Arch Linux' /etc/os-release && {
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+# Load syntax highlighting (should be last).
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh 
+}
+
+grep -q -E '(Debian|Ubuntu)' /etc/os-release && {
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Load syntax highlighting (should be last).
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+}
+
+grep -q 'CentOS Linux' /etc/os-release && {
+# Load syntax highlighting (should be last).
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+}
