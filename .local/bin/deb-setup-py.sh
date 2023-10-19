@@ -2,7 +2,7 @@
 #
 # This is a script I use to create a virtual environment for user packages
 
-VENV_DIR=~/.local/pyenv
+VENV_DIR=~/.local/pyvenv
 
 pyvenv () {
 	python3 -m venv $VENV_DIR
