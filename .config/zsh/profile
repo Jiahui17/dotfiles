@@ -22,9 +22,10 @@
 #export PATH=$PATH:/opt/dhls-benchmarks/scripts
 
 export PATH=$PATH:~/.local/bin
-#export PATH=$PATH:/opt/abc
+export PATH=$PATH:~/.local/share/python/bin
 
 export LM_LICENSE_FILE=/opt/intelFPGA/LR-128191_License.dat:$LM_LICENSE_FILE
+
 
 }
 

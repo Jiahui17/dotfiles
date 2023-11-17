@@ -65,7 +65,7 @@ alias xo='xdg-open .'
 
 # remote servers
 alias eda2='TERM=xterm-256color ssh -X jiahxu@ee-tik-eda2.ethz.ch'
-alias eda4='TERM=xterm ssh -X jiahxu@ee-tik-eda4.ethz.ch'
+alias eda4='TERM=xterm ssh -X jiahxu@ee-tik-eda4.ethz.ch -t "zsh --login"'
 alias lagrev1='TERM=xterm ssh -X jiahxu@lagrev1.ethz.ch'
 alias lagrev2='TERM=xterm ssh -X jiahxu@lagrev2.ethz.ch'
 alias lagrev3='TERM=xterm ssh -X jiahxu@lagrev3.ethz.ch'
@@ -76,6 +76,7 @@ alias jg='cds_jasper-22.09.001 jg'
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias mutt='mkdir -p ~/Mail/Attachments; cd ~/Mail/Attachments && mutt'
 alias top='htop -M --readonly'
+alias top='btop'
 alias clock='tty-clock -c -C 2 -s'
 
 alias tikvpn='sudo openconnect https://sslvpn.ethz.ch/ee-tik -u jiahxu@ee-tik.ethz.ch' 
