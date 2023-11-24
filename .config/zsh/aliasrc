@@ -57,11 +57,14 @@ alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='rm -vI'
 alias grep='grep --color=auto'
-alias r='/usr/bin/python3 /opt/ranger/ranger.py \
-	--choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
 alias zip='zip -x "*/.*" -x "*/sim/HLS_VERIFY/work/*" -x "*/sim/*_SRC/*" -x "*/sim/*_OUT/*" -x "*/sim/INPUT_VECTORS/*"' # by default not zipping hidden files
 alias sh='bash'
 alias xo='xdg-open .'
+
+alias r='/usr/bin/python3 /opt/ranger/ranger.py \
+	--choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
+
+alias f='fzf'
 
 # remote servers
 alias eda2='TERM=xterm-256color ssh -X jiahxu@ee-tik-eda2.ethz.ch'

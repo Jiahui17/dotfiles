@@ -10,6 +10,14 @@
 source $ZDOTDIR/aliasrc
 source $ZDOTDIR/profile
 
+# fzf zsh integration: try out CTRL-t, CTRL-r or ALT-c
+[ -d '/usr/share/doc/fzf/examples/' ] && {
+	source /usr/share/doc/fzf/examples/key-bindings.zsh
+	source /usr/share/doc/fzf/examples/completion.zsh
+} || {
+	echo "fzf is not correctly installed or you are not on a Debian-based distro!"
+}
+
 # prompt setup script
 # note: you need to install powerlevel9k via apt to use this script
 source $ZDOTDIR/prompt
