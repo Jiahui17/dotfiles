@@ -61,7 +61,7 @@ alias zip='zip -x "*/.*" -x "*/sim/HLS_VERIFY/work/*" -x "*/sim/*_SRC/*" -x "*/s
 alias sh='bash'
 alias xo='xdg-open .'
 
-alias r='/usr/bin/python3 /opt/ranger/ranger.py \
+alias r='/usr/bin/python3 ~/.local/ranger/ranger.py \
 	--choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
 
 alias f='fzf'
