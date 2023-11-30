@@ -1,9 +1,11 @@
+#!/usr/bin/env zsh
+
 # Zsh prompt configuration
 # source: https://github.com/daniruiz/dotfiles/blob/master/.zshrc
 
 if ! [[ $(tty) = /dev/tty* ]]
 then
-	if source /usr/share/powerlevel9k/powerlevel9k.zsh-theme 2> /dev/null
+	if source ${ZDOTDIR}/powerlevel9k/powerlevel9k.zsh-theme 2> /dev/null
 	then
 		s=' ' # fix too wide icons
 		POWERLEVEL9K_MODE=nerdfont-complete
