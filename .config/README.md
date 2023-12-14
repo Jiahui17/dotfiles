@@ -6,12 +6,11 @@ Get the packages:
 
 ```sh
 sudo apt-get update
-sudo apt-get install build-essential git neovim curl wget \
-	zsh zsh-autocompletion zsh-syntax-highlighting zsh-theme-powerlevel9k
+sudo apt-get install build-essential git neovim curl wget zsh fzf
 ```
 
 ```bash
-mkdir -p ~/.config ~/.local ~/.cache
+mkdir -p ~/.config ~/.local ~/.cache/ranger ~/Build
 git clone --separate-git-dir=$HOME/.config/dotfiles https://github.com/Jiahui17/dotfiles.git $HOME/myconf-tmp
 rm -r ~/myconf-tmp/
 # put this line inside ~/.config/zsh/aliasrc as well
@@ -28,6 +27,15 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
+
+## Getting the font for Neovim and Ranger
+
+```
+git clone https://github.com/ryanoasis/nerd-fonts ~/Build/nerd-fonts --depth 1 && cd ~/Build/nerd-fonts && sudo ./install.sh -S
+
+```
+
+## Add a new file using the git bare repository
 
 To add a new file:
 ```sh
