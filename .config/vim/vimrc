@@ -1,0 +1,65 @@
+"
+"
+"               ██
+"               ▀▀
+"  ██▄  ▄██   ████     ████▄██▄   ██▄████   ▄█████▄
+"   ██  ██      ██     ██ ██ ██   ██▀      ██▀    ▀
+"   ▀█▄▄█▀      ██     ██ ██ ██   ██       ██
+"    ████    ▄▄▄██▄▄▄  ██ ██ ██   ██       ▀██▄▄▄▄█
+"     ▀▀     ▀▀▀▀▀▀▀▀  ▀▀ ▀▀ ▀▀   ▀▀         ▀▀▀▀▀
+" 
+"
+"
+"
+
+call plug#begin()
+	Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+autocmd BufReadPost *
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\   exe "normal! g`\"" |
+	\ endif
+
+"enable syntax highlighting
+syntax on
+
+"disable ex mode
+map Q <Nop> 
+
+set mouse=a "mouse integration between tmux
+
+set number "show the line numbers
+
+set noswapfile
+set nocompatible
+
+set hlsearch "highlight the search results
+
+set clipboard+=unnamedplus,unnamed
+
+"automatically format python code on save
+if executable("black")
+function PyFormatBuffer()
+  if &modified
+    let cursor_pos = getpos('.')
+    :%!black -q -
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+autocmd BufWritePre *.py :call PyFormatBuffer()
+endif
+
+"automatically format cpp code on save
+if executable("clang-format")
+function CppFormatBuffer()
+  if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+    let cursor_pos = getpos('.')
+    :%!clang-format
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call CppFormatBuffer()
+endif
+
+autocmd FileType c,cpp,java,php,tex,py,sh autocmd BufWritePre <buffer> %s/\s\+$//e

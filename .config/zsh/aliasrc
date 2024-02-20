@@ -8,10 +8,7 @@
 
 
 # vim
-alias vi='nvim'
-alias v='nvim'
-alias sv='sudo nvim'
-
+alias vi='vim'
 
 # git 
 alias g='git'
@@ -78,8 +75,7 @@ alias jg='cds_jasper-22.09.001 jg'
 
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias mutt='mkdir -p ~/Mail/Attachments; cd ~/Mail/Attachments && mutt'
-alias top='htop -M --readonly'
-alias top='btop'
+alias top='htop'
 alias clock='tty-clock -c -C 2 -s'
 
 alias tikvpn='sudo openconnect https://sslvpn.ethz.ch/ee-tik -u jiahxu@ee-tik.ethz.ch' 

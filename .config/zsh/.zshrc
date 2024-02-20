@@ -30,8 +30,8 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export SAVEHIST=1000
 export HISTSIZE=999
 
-#export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
-#export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
+export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 export PATH=$PATH:$HOME/.local/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -70,7 +70,7 @@ zstyle ':completion:*:*:nvim:*' file-patterns '^*.(aux|log|pdf|bbl|blg|log|out):
 zmodload zsh/complist
 
 # Automatically cd into typed directory.
-setopt autocd          
+#setopt autocd          
 
 # never make sounds on error
 setopt NO_BEEP
