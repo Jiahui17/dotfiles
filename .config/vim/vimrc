@@ -14,12 +14,34 @@ set rtp+=$XDG_CACHE_HOME/vim
 " automatically install the plugin manager on start
 let data_dir = has('nvim') ? stdpath('data') . '/site' : "$XDG_CACHE_HOME/" . 'vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim \
+  --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" automatically run PlugInstall on startup if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \| PlugInstall --sync | source $MYVIMRC
+      \| endif
+
 call plug#begin(data_dir)
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+" my color scheme
+let g:lightline = {'colorscheme': 'catppuccin_frappe'}
+colorscheme catppuccin_frappe
+
+" status line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -41,7 +63,9 @@ set nocompatible
 
 set hlsearch "highlight the search results
 
-set clipboard+=unnamedplus,unnamed
+"set clipboard+=unnamedplus,unnamed
+" in Ubuntu, <set clipboard=unnamedplus> works
+set clipboard=unnamedplus
 set tags=tags;/
 
 set tabstop=2 softtabstop=2 shiftwidth=2
@@ -56,7 +80,7 @@ if executable("black")
   function PyFormatBuffer()
     if &modified
       let cursor_pos = getpos('.')
-      :%!black -q -
+      :%!black -l 80 -q -
       call setpos('.', cursor_pos)
     endif
   endfunction
