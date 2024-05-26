@@ -31,15 +31,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " my color scheme
-let g:lightline = {'colorscheme': 'catppuccin_frappe'}
-colorscheme catppuccin_frappe
-colorscheme zenburn
+" let g:lightline = {'colorscheme': 'catppuccin_frappe'}
+" colorscheme catppuccin_frappe
+colorscheme default
 
 " status line
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#left_sep = ' '
@@ -70,9 +72,20 @@ set nocompatible
 
 set hlsearch "highlight the search results
 
-"set clipboard+=unnamedplus,unnamed
-" in Ubuntu, <set clipboard=unnamedplus> works
-set clipboard=unnamedplus
+
+""""""""""-- This will put everything into the system clipboard
+""""""""""set clipboard+=unnamedplus,unnamed
+"""""""""" in Ubuntu, <set clipboard=unnamedplus> works
+""""""""""set clipboard=unnamedplus
+
+" -- My clipboard management -- "
+" In visual mode, Ctrl-C will put the selected content into the system
+"clipboard
+vmap <C-c> "+yi
+" In visual mode, Ctrl-X will cut the selected content into the system
+"clipboard
+vmap <C-x> "+c
+
 set tags=tags;/
 
 set tabstop=2 softtabstop=2 shiftwidth=2
@@ -87,19 +100,20 @@ if executable("black")
   function PyFormatBuffer()
     if &modified
       let cursor_pos = getpos('.')
-      :%!black -l 80 -q -
+      :%!black --fast -l 80 -q - 2>/dev/null
       call setpos('.', cursor_pos)
     endif
   endfunction
   autocmd BufWritePre *.py :call PyFormatBuffer()
 endif
+"autocmd BufWritePre *.py :Black
 
 "automatically format cpp code on save
 if executable("clang-format")
   function CppFormatBuffer()
     if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
       let cursor_pos = getpos('.')
-      :%!clang-format
+      :%!clang-format --style=LLVM
       call setpos('.', cursor_pos)
     endif
   endfunction
@@ -107,3 +121,4 @@ if executable("clang-format")
 endif
 
 autocmd FileType c,cpp,java,php,tex,py,sh autocmd BufWritePre <buffer> %s/\s\+$//e
+
