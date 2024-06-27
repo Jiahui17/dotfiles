@@ -11,7 +11,7 @@
 set rtp+=$XDG_CONFIG_HOME/vim
 set rtp+=$XDG_CACHE_HOME/vim
 
-" automatically install the plugin manager on start
+" ---- automatically install the plugin manager on start ---- "
 let data_dir = has('nvim') ? stdpath('data') . '/site' : "$XDG_CACHE_HOME/" . 'vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim \
@@ -35,19 +35,19 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" my color scheme
+" ---- Color Scheme ---- "
 " let g:lightline = {'colorscheme': 'catppuccin_frappe'}
-" colorscheme catppuccin_frappe
+" colorscheme catppuccin_mocha
 colorscheme default
 
-" status line
+" ---- Status Line ---- "
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-" set the cursor style
+" ---- Cursor Style---- "
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
@@ -64,29 +64,28 @@ syntax on
 map Q <Nop> 
 
 set mouse=a "mouse integration between tmux
-
 set number "show the line numbers
-
 set noswapfile
 set nocompatible
 
-set hlsearch "highlight the search results
+" ---- Clipboard settings ---- "
 
+"-- This will put everything into the system clipboard
+"set clipboard+=unnamedplus,unnamed
+" in Ubuntu, <set clipboard=unnamedplus> works
+set clipboard=unnamedplus
 
-""""""""""-- This will put everything into the system clipboard
-""""""""""set clipboard+=unnamedplus,unnamed
-"""""""""" in Ubuntu, <set clipboard=unnamedplus> works
-""""""""""set clipboard=unnamedplus
-
-" -- My clipboard management -- "
-" In visual mode, Ctrl-C will put the selected content into the system
-"clipboard
-vmap <C-c> "+yi
-" In visual mode, Ctrl-X will cut the selected content into the system
-"clipboard
-vmap <C-x> "+c
+" " -- My clipboard management -- "
+" " In visual mode, Ctrl-C will put the selected content into the system
+" "clipboard
+" vmap <C-c> "+yi<Esc>
+" " In visual mode, Ctrl-X will cut the selected content into the system
+" "clipboard
+" vmap <C-x> "+c<Esc>
 
 set tags=tags;/
+
+" ---- Indent options ---- "
 
 set tabstop=2 softtabstop=2 shiftwidth=2
 set expandtab
@@ -94,6 +93,36 @@ set number ruler
 set autoindent smartindent
 syntax enable
 filetype plugin indent on
+
+
+" Line number
+highlight LineNr term=bold cterm=NONE
+  \ ctermfg=DarkGrey
+  \ ctermbg=NONE 
+  \ gui=NONE guifg=gray16 guibg=NONE
+
+" ---- Indent line ---- "
+
+" Vim
+let g:indentLine_color_term=239
+
+" GVim
+let g:indentLine_color_gui='#808080'
+
+" none X terminal
+let g:indentLine_color_tty_light=7 " (default: 4)
+let g:indentLine_color_dark=1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_gui='#808080'
+
+" set colorcolumn=72
+
+" ---- Search highlight ---- "
+set hlsearch "highlight the search results
+hi Search cterm=NONE ctermfg=black guifg=black
+
+" ---- Autoformatter ---- "
 
 "automatically format python code on save
 if executable("black")
