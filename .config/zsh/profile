@@ -9,7 +9,8 @@
 # | .__/|_|  \___/|_| |_|_|\___|
 # |_|
 
-[ "$HOST" = "Lenovo-ThinkPad-T14-Gen-2a" ] && {
+
+[ "$HOST" = "jxu-ThinkPad-T14-Gen-2a" ] && {
 
 #export GUROBI_HOME='/opt/gurobi1001/linux64'
 #export PATH=$PATH:"$GUROBI_HOME/bin"
@@ -26,6 +27,8 @@ export PATH=$PATH:~/.local/share/python/bin
 
 export LM_LICENSE_FILE=/opt/intelFPGA/LR-128191_License.dat:$LM_LICENSE_FILE
 
+export PATH="${PATH}:${HOME}/.local/share/coursier/bin"
+#
 
 }
 
