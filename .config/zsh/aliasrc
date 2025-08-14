@@ -39,7 +39,7 @@ alias rm='rm -vI'
 alias grep='grep --color=auto'
 alias zip='zip -x "*/.*" -x "*/sim/HLS_VERIFY/work/*" -x "*/sim/*_SRC/*" -x "*/sim/*_OUT/*" -x "*/sim/INPUT_VECTORS/*"' # by default not zipping hidden files
 
-alias r='/usr/bin/python3 ~/.local/ranger/ranger.py \
+alias r='/usr/bin/python3 /opt/ranger/ranger.py \
 	--choosedir=$HOME/.cache/ranger/rangerdir; LASTDIR=`cat $HOME/.cache/ranger/rangerdir`; cd "$LASTDIR"'
 
 alias f='fzf'

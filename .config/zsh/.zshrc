@@ -30,8 +30,8 @@ export HISTFILE="$XDG_STATE_HOME"/zsh/history
 export SAVEHIST=1000
 export HISTSIZE=999
 
-export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
-export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
+# export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
+# export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.vim" | so $MYVIMRC'
 export PATH=$PATH:$HOME/.local/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -50,14 +50,14 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump
 # Zsh prompt
 #-----------------------------------------------------------------------------------
 
-# PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
 
 
 autoload -Uz promptinit
 
 promptinit
 
-PROMPT='$ '
+#PROMPT='$ '
+PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%(2~|%1~|%~)%{$fg[red]%}]%{$reset_color%}$%b "
 
 #-----------------------------------------------------------------------------------
 # Zsh completion

@@ -3,3 +3,9 @@
 	name = Jiahui Xu
 [core]
 	pager = less
+[credential]
+	helper = store
+[protocol "file"]
+	allow = always
+[init]
+	defaultBranch = main

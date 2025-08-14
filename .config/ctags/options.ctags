@@ -1,2 +1,4 @@
 --recurse 
 --exclude=build
+--exclude=bin
+--exclude=test

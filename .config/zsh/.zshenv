@@ -38,8 +38,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=xterm-256color
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib
 export PATH=$PATH:$HOME/.local/share/python/bin
+. "$HOME/.cargo/env"

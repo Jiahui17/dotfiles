@@ -6,7 +6,7 @@ Get the packages:
 
 ```sh
 sudo apt-get update
-sudo apt-get install build-essential git neovim curl wget zsh fzf
+sudo apt-get install build-essential git neovim curl wget zsh tmux fzf
 ```
 
 ```bash
@@ -32,7 +32,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ```
 git clone https://github.com/ryanoasis/nerd-fonts ~/Build/nerd-fonts --depth 1 && cd ~/Build/nerd-fonts && sudo ./install.sh -S
+```
 
+## Install Python 3.10
+
+```
+sudo apt-get install -y python3-dev python3.10-full python3.10-venv
 ```
 
 ## Add a new file using the git bare repository
@@ -46,3 +51,10 @@ config add .config/redshift.conf
 config commit -m "Add redshift config"
 config push
 ```
+
+
+## Some useful commands
+
+
+
+

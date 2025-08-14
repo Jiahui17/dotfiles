@@ -26,23 +26,27 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin(data_dir)
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'nordtheme/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'Yggdroot/indentLine'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
 " ---- Color Scheme ---- "
 " let g:lightline = {'colorscheme': 'catppuccin_frappe'}
-" colorscheme catppuccin_mocha
-colorscheme default
+" colorscheme industry
+colorscheme zenburn
 
 " ---- Status Line ---- "
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+" let g:airline_theme='base16_nord'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -93,6 +97,15 @@ set autoindent smartindent
 syntax enable
 filetype plugin indent on
 
+" ---- Display the quote marks of json attributes ---- "
+let g:vim_json_conceal=0
+
+" ---- Display the bold/italic operators of markdown---- "
+let g:vim_markdown_conceal=0
+let g:vim_markdown_conceal_code_blocks=0
+let g:markdown_syntax_conceal=0
+
+let g:tex_conceal = ''
 
 " Line number
 highlight LineNr term=bold cterm=NONE
@@ -147,6 +160,23 @@ if executable("clang-format")
   endfunction
   autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call CppFormatBuffer()
 endif
+
+" " START: Google XLS LSP
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" if executable('dslx_ls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'dslx_ls',
+"         \ 'cmd': {server_info->['dslx_ls']},
+"         \ 'allowlist': ['dslx', '.x'],
+"         \ })
+" endif
+" let g:lsp_diagnostics_echo_cursor = 1
+" let g:lsp_diagnostics_highlights_enabled = 1
+" let g:lsp_diagnostics_signs_enabled = 1
+" au BufRead,BufNewFile *.x set filetype=dslx
+" " END: Google XLS LSP
+"
 
 autocmd FileType c,cpp,java,php,tex,py,sh autocmd BufWritePre <buffer> %s/\s\+$//e
 
