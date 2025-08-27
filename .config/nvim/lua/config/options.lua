@@ -27,11 +27,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.cmd.colorscheme "catppuccin"
 -- vim.cmd.colorscheme "tokyonight"
 
-vim.api.nvim_set_option("clipboard","unnamed")
-
-
+vim.api.nvim_set_option("clipboard", "unnamedplus")

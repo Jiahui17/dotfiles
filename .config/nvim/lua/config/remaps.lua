@@ -24,6 +24,19 @@ vim.keymap.set('n', '<F5>',
       return
     end
 
+    vim.system({ 'ninja' }, { cwd = cmake_build_dir }, function(obj)
+      if obj.code == 0 then
+        -- obj.stdout is the command's output (string if text=true, else list of bytes)
+        vim.schedule(function()
+          vim.notify(obj.stdout, vim.log.levels.INFO)
+        end)
+      else
+        vim.schedule(function()
+          vim.notify("Error: " .. obj.stderr, vim.log.levels.ERROR)
+        end)
+      end
+    end)
+
     vim.cmd("below split")
     vim.cmd.terminal()
     vim.api.nvim_chan_send(vim.bo.channel, "cd " .. cmake_build_dir .. "\r")
