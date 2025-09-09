@@ -80,5 +80,8 @@ return {
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin-macchiato")
     end,
+  },
+  {
+    "rebelot/kanagawa.nvim",
   }
 }

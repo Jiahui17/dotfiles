@@ -10,7 +10,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -29,7 +29,8 @@ vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "kanagawa"
+-- vim.cmd.colorscheme "catppuccin"
 -- vim.cmd.colorscheme "tokyonight"
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
