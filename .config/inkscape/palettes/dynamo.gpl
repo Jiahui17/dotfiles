@@ -1,0 +1,13 @@
+GIMP Palette
+Name: DYNAMO Colors
+Columns: 8
+# DYNAMO Group at ETHZ
+0 0 0 Black
+255 255 255 White
+3 122 204 Blue
+239 238 250 Light Purple
+95 85 200 Purple
+66 58 138 Dark Purple
+190 200 85 Yellow Green (complement of DYNAMO purple)
+102 102 102 Dark Gray
+170 170 170 Light Gray
